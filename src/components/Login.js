@@ -7,12 +7,11 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignIn, setIsSignIn] = useState(true);
   const name = useRef(null);
@@ -26,8 +25,7 @@ const Login = () => {
 
   const handleButtonClick = () => {
     // Validate the form Data
-    // console.log(email.current.value);
-    // console.log(password.current.value);
+
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
     if (message) return;
@@ -43,21 +41,19 @@ const Login = () => {
           const user = userCredential.user;
           return updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/75851673?v=4",
+            photoURL: USER_AVATAR,
           });
         })
         .then(() => {
-          const udpatedUser = auth.currentUser;
-          console.log(udpatedUser);
+          const updatedUser = auth.currentUser;
           dispatch(
             addUser({
-              uid: udpatedUser.uid,
-              email: udpatedUser.email,
-              displayName: udpatedUser.displayName,
-              photoURL: udpatedUser.photoURL,
+              uid: updatedUser.uid,
+              email: updatedUser.email,
+              displayName: updatedUser.displayName,
+              photoURL: updatedUser.photoURL,
             })
           );
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -71,13 +67,7 @@ const Login = () => {
         email.current.value,
         password.current.value
       )
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
-          // ...
-        })
+        .then((userCredential) => {})
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
