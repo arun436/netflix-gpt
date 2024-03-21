@@ -28,7 +28,13 @@
 - Fetch data for Trailer Video
 - Update the store with trailer Video data.
 - Embeded the Youtube Video, made it autoplay and mute
-- Tailwaind classes to make main container look aweseom.
+- Tailwaind classes to make main container look aweseome.
+- Built secondary component.
+- Built the Movie List
+- Built the Movie Card
+- We found out the TMDB Image CDN and added it.
+- We made the UI look better.
+- usePopularMovies custom hook.
 
 # Features
 
