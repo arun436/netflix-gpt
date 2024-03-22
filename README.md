@@ -13,7 +13,7 @@
 - Create Sign Up User Account in Firebase
 - Implemented Sign In using User Api
 - Created Redux Store with userSlice
-- Implamented Signout
+- Implemented Signout
 - Update Profile
 - BugFix: Sign Up user display name and profile Picture Update
 - BugFix: if the user is logged in redirect to /browse page and if user is not logged in redirect to / page.
@@ -35,6 +35,9 @@
 - We found out the TMDB Image CDN and added it.
 - We made the UI look better.
 - usePopularMovies custom hook.
+- GPT Search Page
+- GPT Search Bar
+- (FEATURE) Multi-languge feature in our app.
 
 # Features
 
