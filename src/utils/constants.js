@@ -8,8 +8,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MWRhZThjODJhZTUwYjhjMTJlMGZiYTllZDJmNGU2ZSIsInN1YiI6IjY1ZmFkN2IwYmYzMWYyMDE3ZWZkYWI4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ME1Cz0qIRlqXjzbstRBb9w789wq85ZeyCbabkAR5hNg",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -32,3 +31,7 @@ export const supportedLanguages = [
     name: "Spanish",
   },
 ];
+
+// Please secure it in .env file and add .env file to gitignore before pushing the code to github and
+// If you are wondering how to deploy it to production, you can add api key details in your firebase project directly.
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

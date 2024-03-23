@@ -38,6 +38,10 @@
 - GPT Search Page
 - GPT Search Bar
 - (FEATURE) Multi-languge feature in our app.
+- Used Open AI key to get the name of the movies that user searches.
+- Storing the data of movies in the Store.
+- Getting the Movies data from TMDB from the GPT search results.
+- Displaying the Movies List in the UI.
 
 # Features
 
