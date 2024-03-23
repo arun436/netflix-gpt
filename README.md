@@ -39,9 +39,14 @@
 - GPT Search Bar
 - (FEATURE) Multi-languge feature in our app.
 - Used Open AI key to get the name of the movies that user searches.
-- Storing the data of movies in the Store.
+- Storing the data of movies in the GPTSlice.
 - Getting the Movies data from TMDB from the GPT search results.
+- Reused MovieList component to make movie suggestions.
 - Displaying the Movies List in the UI.
+- Memoization
+- Adding .env file
+- Adding .env file to .gitignore.
+- Made our site responsive.
 
 # Features
 
