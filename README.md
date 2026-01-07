@@ -1,4 +1,4 @@
-# Netflix - GPT
+# Netflix - GPT - https://netflixgpt-ecb31.web.app/
 
 - Create React App
 - Configured Tailwind CSS
