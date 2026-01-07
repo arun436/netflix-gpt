@@ -25,7 +25,7 @@ const useMovieTrailer = (movieId) => {
     } catch (error) {
       console.log(error);
     }
-  }, [dispatch]);
+  }, [dispatch, movieId]);
   useEffect(() => {
     if (!trailerVideo) {
       getMovieVideos();
