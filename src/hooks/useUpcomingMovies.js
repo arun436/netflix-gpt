@@ -1,19 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constants";
 import { addTopRatedMovies, addUpcomingMovies } from "../utils/moviesSlice";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 const useUpcomingMovies = () => {
   const dispatch = useDispatch();
 
   const upcomingMovies = useSelector((store) => store.movies.upcomingMovies);
-  useEffect(() => {
-    if (!upcomingMovies) {
-      getUpcomingMovies();
-    }
-  }, []);
-
-  const getUpcomingMovies = async () => {
+  const getUpcomingMovies = useCallback(async () => {
     try {
       const data = await fetch(
         "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
@@ -24,7 +18,12 @@ const useUpcomingMovies = () => {
     } catch (error) {
       console.error(error);
     }
-  };
+  });
+  useEffect(() => {
+    if (!upcomingMovies) {
+      getUpcomingMovies();
+    }
+  }, [getUpcomingMovies, upcomingMovies]);
 };
 
 export default useUpcomingMovies;
