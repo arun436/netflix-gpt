@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constants";
-import { addTopRatedMovies, addUpcomingMovies } from "../utils/moviesSlice";
+import { addUpcomingMovies } from "../utils/moviesSlice";
 import { useCallback, useEffect } from "react";
 
 const useUpcomingMovies = () => {
@@ -18,7 +18,7 @@ const useUpcomingMovies = () => {
     } catch (error) {
       console.error(error);
     }
-  });
+  }, [dispatch]);
   useEffect(() => {
     if (!upcomingMovies) {
       getUpcomingMovies();

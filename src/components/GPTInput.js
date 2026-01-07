@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
 import lang from "../utils/languageConstants";
-import openai from "../utils/openAI";
+// import openai from "../utils/openAI";
 import { API_OPTIONS } from "../utils/constants";
 import { addGPTMovieResult } from "../utils/gptSlice";
 const GPTInput = () => {
@@ -11,10 +11,10 @@ const GPTInput = () => {
 
   const handleGPTSearchClick = async () => {
     // Make an API CALL to GPT API and get movie results.
-    const gptQuery =
-      "Act as a Movie recommendation System and suggest some movies for the query. " +
-      searchText.current.value +
-      ". Only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Interstellar, Sholay, Don, RRR, Golmaal";
+    // const gptQuery =
+    //   "Act as a Movie recommendation System and suggest some movies for the query. " +
+    //   searchText.current.value +
+    //   ". Only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Interstellar, Sholay, Don, RRR, Golmaal";
     // try {
     //   const gptResults = await openai.chat.completions.create({
     //     messages: [{ role: "user", content: gptQuery }],

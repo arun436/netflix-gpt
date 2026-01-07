@@ -18,7 +18,7 @@ const usePopularMovies = () => {
     } catch (error) {
       console.error(error);
     }
-  });
+  }, [dispatch]);
 
   useEffect(() => {
     if (!popularMovies) {

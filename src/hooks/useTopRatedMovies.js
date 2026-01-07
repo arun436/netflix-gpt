@@ -18,7 +18,7 @@ const useTopRatedMovies = () => {
     } catch (error) {
       console.error(error);
     }
-  });
+  }, [dispatch]);
   useEffect(() => {
     if (!topRatedMovies) {
       getTopRatedMovies();

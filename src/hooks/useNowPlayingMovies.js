@@ -20,7 +20,7 @@ const useNowPlayingMovies = () => {
     } catch (error) {
       console.error(error);
     }
-  });
+  }, [dispatch]);
   useEffect(() => {
     if (!nowPlayingMovies) {
       getNowPlayingMovies();
